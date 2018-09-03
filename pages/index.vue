@@ -6,30 +6,14 @@
         gwawr.co.uk
       </h1>
       <h2 class="subtitle">
-        Gwawr portfolio site using NuxtJS
+        Portfolio site
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue"
-
-export default {
-  components: {
-    AppLogo
-  }
-}
+console.log("Hello World")
 </script>
 
 <style>

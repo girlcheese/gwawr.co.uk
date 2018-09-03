@@ -1,8 +1,19 @@
 <template>
   <div>
+    <gwawr-nav/>
     <nuxt/>
   </div>
 </template>
+
+<script>
+import GwawrNav from "~/components/GwawrNav.vue"
+
+export default {
+  components: {
+    GwawrNav
+  }
+}
+</script>
 
 <style>
 html {
