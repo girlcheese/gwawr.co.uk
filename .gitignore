@@ -14,4 +14,4 @@ dist
 .idea
 
 # Config
-.contentful.json
+#.contentful.json
