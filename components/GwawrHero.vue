@@ -1,5 +1,5 @@
 <template>
-  <header v-if="message !== ''" class="bg-gold sans-serif" >
+  <header v-if="message !== ''" :style="`background-image:url(${bgImage})`" class="bg-gold sans-serif" >
     <div class="mw9 center pa4 pv5 pv6-ns pb6-ns ph7-l">
       <h3 class="f2 f1-m f-headline-l measure-narrow lh-title mv0">
         <span class="bg-black-90 lh-copy white pa1 ph2 tracked-tight">
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style scoped>
-pre {
-  font-family: "courier-new";
+header {
+  background-size: cover;
 }
 </style>

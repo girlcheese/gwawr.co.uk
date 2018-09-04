@@ -1,11 +1,17 @@
 <template>
   <article>
     <gwawr-hero :message="message"/>
-    <ul>
-      <li v-for="(project, index) in projects" :key="index">
-        <nuxt-link :to="`/projects/${project.fields.slug}`">{{ project.fields.title }}</nuxt-link>
-      </li>
-    </ul>
+    <div v-for="(project, index) in projects" :key="index" class="fl w-100 w-50-m w-25-ns">
+      <nuxt-link :to="`/projects/${project.fields.slug}`" class="db aspect-ratio aspect-ratio--1x1 dim">
+        <span :aria-label="project.fields.title" role="img" style="background-image:url(http://mrmrs.github.io/photos/beyonce.jpg);" class="bg-center cover aspect-ratio--object">{{ project.fields.title }}</span>
+      </nuxt-link>
+    </div>
+    <!--
+      <div class="fl w-50">
+      <div class="fl w-100 w-25-ns">
+      <div class="fl w-100 w-50-m w-25-ns">
+      <div class="fl w-100 w-50-m w-25-l">
+    -->
   </article>
 </template>
 
@@ -24,6 +30,9 @@ export default {
       message: "My Projects",
       projects: null
     }
+  },
+  head: {
+    title: "Sam Carrington - Projects"
   },
   asyncData({ env }) {
     return Promise.all([
