@@ -1,3 +1,5 @@
+const config = require("./.contentful.json")
+
 module.exports = {
   /*
   ** Headers of the page
@@ -15,6 +17,10 @@ module.exports = {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
+  /*
+  ** Add vendor CSS
+  */
+  css: ["tachyons/css/tachyons.css"],
   /*
   ** Customize the progress bar color
   */
@@ -35,6 +41,19 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    /**
+     * PostCSS (not working) FIXME
+     */
+    postcss: [require("postcss-extend")(), require("postcss-hexrgba")()]
+  },
+  /**
+   * Config vars
+   */
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: config.CTF_PERSON_ID,
+    CTF_PROJECT_POST_TYPE_ID: config.CTF_PROJECT_POST_TYPE_ID
   }
 }

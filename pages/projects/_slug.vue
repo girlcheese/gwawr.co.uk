@@ -1,12 +1,53 @@
 <template>
-  <section class="container" />
+  <article>
+    <gwawr-hero :message="project.fields.title"/>
+    <main class="pa4 ph7-l georgia mw9-l center">
+      <div class="f5 f3-ns lh-copy measure georgia" v-html="parseDown(project.fields.body)"/>
+    </main>
+  </article>
 </template>
 
 <script>
+import GwawrHero from "~/components/GwawrHero"
+import { createClient } from "~/plugins/contentful.js"
+import "markdown-it"
+
+const client = createClient()
+
 export default {
+  components: {
+    GwawrHero
+  },
   validate({ params }) {
     // Must be a slug
-    return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(params.id)
+    return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(params.slug)
+  },
+  data() {
+    return {
+      project: null,
+      message: null
+    }
+  },
+  asyncData({ env, params }) {
+    return Promise.all([
+      client.getEntries({
+        content_type: env.CTF_PROJECT_POST_TYPE_ID,
+        "fields.slug": params.slug
+      })
+    ])
+      .then(([projects]) => {
+        console.log("############", projects)
+        return {
+          project: projects.items[0]
+        }
+      })
+      .catch(console.error)
+  },
+  methods: {
+    parseDown(data) {
+      let md = require("markdown-it")()
+      return md.render(data)
+    }
   }
 }
 </script>

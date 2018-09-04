@@ -1,49 +1,32 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        gwawr.co.uk
-      </h1>
-      <h2 class="subtitle">
-        Portfolio site
-      </h2>
-    </div>
-  </section>
+  <article>
+    <gwawr-hero :message="message"/>
+    <main class="pa4 ph7-l georgia mw9-l center">
+      <p class="f5 f3-ns lh-copy measure georgia">
+        Theodore Sturgeon was a science fiction author, critic, and the basis for Kurt Vonnegut's recurring character Kilgore Trout. He was prolific, authoring over 200 pieces himself and critiquing around 400 others.
+      </p>
+    </main>
+  </article>
 </template>
 
 <script>
-console.log("Hello World")
+import GwawrHero from "~/components/GwawrHero"
+
+export default {
+  components: {
+    GwawrHero
+  },
+  data: function() {
+    return {
+      message: "Hi I'm Sam"
+    }
+  }
+}
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style scoped>
+header {
+  background-image: url(https://instagram.flhr4-1.fna.fbcdn.net/vp/5848a40c5dc6d10f3640bc03722cbd62/5C1F216C/t51.2885-15/e35/35617071_193034048022961_6300091736123244544_n.jpg);
+  background-size: cover;
 }
 </style>

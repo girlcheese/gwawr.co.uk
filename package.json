@@ -14,7 +14,13 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.4.2"
+    "axios": "^0.18.0",
+    "contentful": "^7.0.3",
+    "markdown-it": "^8.4.2",
+    "nuxt": "^1.4.2",
+    "postcss-extend": "^1.0.5",
+    "postcss-hexrgba": "^1.0.1",
+    "tachyons": "^4.11.1"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
