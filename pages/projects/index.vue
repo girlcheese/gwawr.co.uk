@@ -1,10 +1,12 @@
 <template>
   <article>
     <gwawr-hero :message="message"/>
+
     <div v-for="(project, index) in projects" :key="index" class="fl w-100 w-50-m w-25-ns">
-      <nuxt-link :to="`/projects/${project.fields.slug}`" class="db aspect-ratio aspect-ratio--1x1 dim">
-        <span :aria-label="project.fields.title" role="img" style="background-image:url(http://mrmrs.github.io/photos/beyonce.jpg);" class="bg-center cover aspect-ratio--object">{{ project.fields.title }}</span>
-      </nuxt-link>
+      <gwawr-project-tile
+        :title="project.fields.title"
+        :url="`/projects/${project.fields.slug}`"
+        :image="project.fields.thumbImage ? project.fields.thumbImage.fields.file.url : ''"/>
     </div>
     <!--
       <div class="fl w-50">
@@ -17,13 +19,16 @@
 
 <script>
 import GwawrHero from "~/components/GwawrHero"
+import GwawrProjectTile from "~/components/GwawrProjectTile"
+
 import { createClient } from "~/plugins/contentful.js"
 
 const client = createClient()
 
 export default {
   components: {
-    GwawrHero
+    GwawrHero,
+    GwawrProjectTile
   },
   data() {
     return {
@@ -32,13 +37,14 @@ export default {
     }
   },
   head: {
-    title: "Sam Carrington - Projects"
+    title:
+      "Sam Carrington - Projects; Budweiser, Sainsbury's, Nando's, Premier League and more"
   },
   asyncData({ env }) {
     return Promise.all([
       client.getEntries({
         content_type: env.CTF_PROJECT_POST_TYPE_ID,
-        order: "-sys.createdAt"
+        order: "-fields.date"
       })
     ])
       .then(([projects]) => {
