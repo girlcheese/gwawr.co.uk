@@ -1,6 +1,6 @@
 <template>
   <article>
-    <gwawr-hero :message="project.fields.title"/>
+    <gwawr-hero :message="project.fields.title" :bg-image="project.fields.bannerImage ? project.fields.bannerImage.fields.file.url : ''"/>
     <main class="pa4 ph7-l georgia mw9-l center">
       <div class="f5 f3-ns lh-copy measure georgia" v-html="parseDown(project.fields.body)"/>
     </main>
@@ -36,7 +36,6 @@ export default {
       })
     ])
       .then(([projects]) => {
-        console.log("############", projects)
         return {
           project: projects.items[0]
         }
