@@ -29,5 +29,6 @@ export default {
 <style scoped>
 header {
   background-size: cover;
+  background-position: 50% 50%;
 }
 </style>

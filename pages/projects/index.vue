@@ -2,12 +2,15 @@
   <article>
     <gwawr-hero :message="message"/>
 
-    <div v-for="(project, index) in projects" :key="index" class="fl w-100 w-50-m w-25-ns">
+    <main>
       <gwawr-project-tile
+        v-for="(project, index) in projects" :key="index"
         :title="project.fields.title"
         :url="`/projects/${project.fields.slug}`"
         :image="project.fields.thumbImage ? project.fields.thumbImage.fields.file.url : ''"/>
-    </div>
+    </main>
+
+
     <!--
       <div class="fl w-50">
       <div class="fl w-100 w-25-ns">
@@ -32,7 +35,7 @@ export default {
   },
   data() {
     return {
-      message: "My Projects",
+      message: "Things I've done",
       projects: null
     }
   },
@@ -58,4 +61,20 @@ export default {
 </script>
 
 <style scoped>
+header {
+  z-index: 100;
+}
+article main {
+  z-index: 20;
+}
+
+main a {
+  position: relative;
+}
+
+main .subtitle {
+  position: absolute;
+  top: 45%;
+  left: 20%;
+}
 </style>

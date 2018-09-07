@@ -1,11 +1,14 @@
 <template>
-  <nuxt-link v-if="title !== null" :to="url" class="db aspect-ratio aspect-ratio--1x1 dim">
-    <span :aria-label="title"
-          :style="`background-image:url(${image});`"
-          role="img"
-          class="bg-center cover aspect-ratio--object">
-      {{ title }}
-    </span>
+  <nuxt-link
+    v-if="title !== null"
+    :to="url"
+    :title="title"
+    class="fl w-50 w-25-l link overflow-hidden">
+    <div :aria-label="title"
+         :style="`background:url(${image}) no-repeat center center; background-size: cover;`"
+         role="img"
+         class="grow aspect-ratio--1x1 z-1"/>
+    <div class="subtitle">{{ title }}</div>
   </nuxt-link>
 </template>
 
@@ -29,4 +32,7 @@ export default {
 </script>
 
 <style scoped>
+.subtitle {
+  display: none;
+}
 </style>
