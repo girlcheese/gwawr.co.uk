@@ -1,13 +1,11 @@
 <template>
-  <header v-if="message !== ''" :style="`background-image:url(${bgImage})`" class="bg-gold sans-serif" >
-    <div class="mw9 center pa4 pv5 pv6-ns pb6-ns ph7-l">
-      <h3 class="f2 f1-m f-headline-l measure-narrow lh-title mv0">
-        <span class="bg-black-90 lh-copy white pa1 ph2 tracked-tight">
-          {{ message }}
-        </span>
-      </h3>
+  <section v-if="message !== ''" :style="`background-image:url(${bgImage})`" class="hero is-medium is-primary is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">{{ message }}</h1>
+      </div>
     </div>
-  </header>
+  </section>
 </template>
 
 <script>
@@ -26,9 +24,15 @@ export default {
 }
 </script>
 
-<style scoped>
-header {
+<style lang="scss" scoped>
+@import "../assets/main.scss";
+.hero {
   background-size: cover;
   background-position: 50% 50%;
+
+  h1 {
+    background-color: rgba($black-ter, 0.4);
+    display: inline;
+  }
 }
 </style>

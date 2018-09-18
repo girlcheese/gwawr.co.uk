@@ -1,11 +1,12 @@
 <template>
   <article>
     <gwawr-hero :message="message" :bg-image="bgImage"/>
-    <main class="pa4 ph7-l georgia mw9-l center">
-      <p class="f5 f3-ns lh-copy measure georgia">
-        I'm on the socials. And happy to talk.
-      </p>
-
+    <main class="section">
+      <div class="container content">
+        <p>
+          I'm on the socials. And happy to talk.
+        </p>
+      </div>
     </main>
   </article>
 </template>

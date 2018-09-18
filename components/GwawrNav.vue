@@ -1,15 +1,59 @@
 <template>
-  <header class="bg-black-90 fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l z-999">
-    <nav class="f6 fw6 ttu tracked">
-      <nuxt-link to="/" exact active-class="light-purple nuxt-link-active" class="link dim white dib mr3">Home</nuxt-link>
-      <nuxt-link to="/about" active-class="light-purple nuxt-link-active" class="link dim white dib mr3" >About</nuxt-link>
-      <nuxt-link to="/projects" active-class="light-purple nuxt-link-active" class="link dim white dib mr3">Projects</nuxt-link>
-      <nuxt-link to="/contact" active-class="light-purple nuxt-link-active" class="link dim white dib">Contact</nuxt-link>
+  <header>
+    <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button"
+           class="navbar-burger burger"
+           aria-label="menu"
+           aria-expanded="false"
+           data-target="navMenu"
+           @click="toggleMenu">
+          <span aria-hidden="true"/>
+          <span aria-hidden="true"/>
+          <span aria-hidden="true"/>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <nuxt-link to="/" exact active-class="nuxt-link-active is-active" class="navbar-item">Home</nuxt-link>
+          <nuxt-link to="/about" active-class="nuxt-link-active is-active" class="navbar-item" >About</nuxt-link>
+          <nuxt-link to="/projects" active-class="nuxt-link-active is-active" class="navbar-item">Projects</nuxt-link>
+          <nuxt-link to="/contact" active-class="nuxt-link-active is-active" class="navbar-item">Contact</nuxt-link>
+        </div>
+        <div class="navbar-end">
+          <div v-if="false" class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a href="#" class="tw-button button">
+                  <span class="icon">
+                    <i class="fab fa-twitter" aria-hidden="true"/>
+                  </span>
+                  <span>Tweet</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 </template>
 
-<style scoped>
+<script>
+export default {
+  methods: {
+    toggleMenu: function(event) {
+      const target = event.target.dataset.target
+      const $target = document.getElementById(target)
+      event.target.classList.toggle("is-active")
+      $target.classList.toggle("is-active")
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import "~/assets/main.scss";
 h1 {
   width: 90px;
   height: 40px;

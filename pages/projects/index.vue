@@ -2,7 +2,7 @@
   <article>
     <gwawr-hero :message="message"/>
 
-    <main>
+    <main class="is-desktop is-gapless">
       <gwawr-project-tile
         v-for="(project, index) in projects" :key="index"
         :title="project.fields.title"
@@ -61,20 +61,7 @@ export default {
 </script>
 
 <style scoped>
-header {
-  z-index: 100;
-}
-article main {
-  z-index: 20;
-}
-
-main a {
-  position: relative;
-}
-
-main .subtitle {
-  position: absolute;
-  top: 45%;
-  left: 20%;
+.test {
+  columns: 1;
 }
 </style>
