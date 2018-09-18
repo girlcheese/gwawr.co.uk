@@ -6,6 +6,10 @@ module.exports = {
   */
   head: {
     title: "gwawr.co.uk",
+    htmlAttrs: {
+      lang: "en",
+      class: "has-navbar-fixed-top"
+    },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -20,11 +24,17 @@ module.exports = {
   /*
   ** Add vendor CSS
   */
-  css: ["tachyons/css/tachyons.css"],
+  css: ["~/assets/main.scss", "bulma/bulma.sass"],
   /*
   ** Customize the progress bar color
   */
   loading: { color: "#3B8070" },
+  /*
+  ** modules
+  */
+  modules: [
+    ["@nuxtjs/google-analytics", { ua: "UA-366915-1" }]
+  ],
   /*
   ** Build configuration
   */
@@ -51,9 +61,11 @@ module.exports = {
    * Config vars
    */
   env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: config.CTF_PERSON_ID,
-    CTF_PROJECT_POST_TYPE_ID: config.CTF_PROJECT_POST_TYPE_ID
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID || config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN:
+      process.env.CTF_CDA_ACCESS_TOKEN || config.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: process.env.CTF_PERSON_ID || config.CTF_PERSON_ID,
+    CTF_PROJECT_POST_TYPE_ID:
+      process.env.CTF_PROJECT_POST_TYPE_ID || config.CTF_PROJECT_POST_TYPE_ID
   }
 }

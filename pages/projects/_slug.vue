@@ -1,8 +1,8 @@
 <template>
   <article>
     <gwawr-hero :message="project.fields.title" :bg-image="project.fields.bannerImage ? project.fields.bannerImage.fields.file.url : ''"/>
-    <main class="pa4 ph7-l georgia mw9-l center">
-      <div class="f5 f3-ns lh-copy measure georgia" v-html="parseDown(project.fields.body)"/>
+    <main class="section">
+      <div class="container content" v-html="parseDown(project.fields.body)"/>
     </main>
   </article>
 </template>
@@ -26,6 +26,11 @@ export default {
     return {
       project: null,
       message: null
+    }
+  },
+  head() {
+    return {
+      title: `Sam Carrington - Projects - ${this.project.fields.title}`
     }
   },
   asyncData({ env, params }) {
