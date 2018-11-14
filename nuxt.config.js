@@ -1,4 +1,5 @@
 const config = require("./.contentful.json")
+const prismicConfig = require("./.prismic.json")
 
 module.exports = {
   /*
@@ -29,6 +30,11 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: "#3B8070" },
+  /*
+  ** Plugins to load before mounting the App
+  */
+  // plugins: [
+  // ],
   /*
   ** modules
   */
@@ -66,6 +72,7 @@ module.exports = {
       process.env.CTF_CDA_ACCESS_TOKEN || config.CTF_CDA_ACCESS_TOKEN,
     CTF_PERSON_ID: process.env.CTF_PERSON_ID || config.CTF_PERSON_ID,
     CTF_PROJECT_POST_TYPE_ID:
-      process.env.CTF_PROJECT_POST_TYPE_ID || config.CTF_PROJECT_POST_TYPE_ID
+      process.env.CTF_PROJECT_POST_TYPE_ID || config.CTF_PROJECT_POST_TYPE_ID,
+    PRISMIC_URL: process.env.PRISMIC_URL || prismicConfig.PRISMIC_URL || 'http://localhost:3000'
   }
 }
