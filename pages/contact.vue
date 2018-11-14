@@ -7,6 +7,50 @@
           I'm on the socials. And happy to talk.
         </p>
       </div>
+      <div class="container">
+        <nav class="level">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Twitter</p>
+              <a href="https://twitter.com/_gwawr">
+                <span class="icon is-large">
+                  <i class="fab fa-2x fa-twitter-square"/>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Github</p>
+              <a href="https://github.com/girlcheese">
+                <span class="icon is-large">
+                  <i class="fab fa-2x fa-github"/>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Instagram</p>
+              <a href="https://www.instagram.com/gwawr/">
+                <span class="icon is-large">
+                  <i class="fab fa-2x fa-instagram"/>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Linked-in</p>
+              <a href="https://www.linkedin.com/in/gwawr/">
+                <span class="icon is-large">
+                  <i class="fab fa-2x fa-linkedin"/>
+                </span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
     </main>
   </article>
 </template>
