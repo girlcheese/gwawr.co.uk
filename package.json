@@ -1,6 +1,6 @@
 {
   "name": "gwawr.co.uk",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Gwawr portfolio site using NuxtJS",
   "author": "Sam Carrington <github@gwawr.co.uk>",
   "private": true,
@@ -21,11 +21,12 @@
     "css-loader": "^1.0.0",
     "markdown-it": "^8.4.2",
     "node-sass": "^4.9.3",
-    "nuxt": "^1.4.2",
+    "nuxt": "^2.3.1",
     "nuxt-sass-resources-loader": "^2.0.5",
     "postcss-extend": "^1.0.5",
     "postcss-hexrgba": "^1.0.1",
     "sass-loader": "^7.1.0",
+    "vue-loader": "^15.4.2",
     "vue-style-loader": "^4.1.2"
   },
   "devDependencies": {
@@ -34,7 +35,7 @@
     "eslint-config-prettier": "^3.0.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^2.1.0",
-    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-vue": "^4.7.1",
     "prettier": "^1.14.2"
   }

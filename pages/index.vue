@@ -1,16 +1,21 @@
 <template>
   <article>
-    <gwawr-hero :message="message" :bg-image="bgImage" class="is-1by2"/>
+    <gwawr-hero :message="message" :bg-image="bgImage" class="is-1by2" />
     <main class="section">
       <div class="container content">
         <p class="">
-          I'm a passionate technologist with a wealth of experience in innovative brand communication, ecommerce and
-          content management. I'm happiest when solving problems, and leading teams to solve them.
+          I'm a passionate technologist with a wealth of experience in
+          innovative brand communication, ecommerce and content management. I'm
+          happiest when solving problems, and leading teams to solve them.
         </p>
         <p class="">
-          In the 20 years I've been building for the web I've seen technologies grow and die, habits mutate and adapt to
-          that change, and seen ample evidence supporting
-          <nuxt-link to="https://blog.codinghorror.com/the-principle-of-least-power/">Atwood's Law</nuxt-link>.
+          In the 20 years I've been building for the web I've seen technologies
+          grow and die, habits mutate and adapt to that change, and seen ample
+          evidence supporting
+          <nuxt-link
+            to="https://blog.codinghorror.com/the-principle-of-least-power/"
+            >Atwood's Law</nuxt-link
+          >.
         </p>
       </div>
     </main>
