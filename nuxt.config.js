@@ -3,8 +3,8 @@ const prismicConfig = require("./.prismic.json")
 
 module.exports = {
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: "gwawr.co.uk",
     htmlAttrs: {
@@ -23,31 +23,29 @@ module.exports = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
-  ** Add vendor CSS
-  */
+   ** Add vendor CSS
+   */
   css: ["~/assets/main.scss", "bulma/bulma.sass"],
   /*
-  ** Customize the progress bar color
-  */
+   ** Customize the progress bar color
+   */
   loading: { color: "#3B8070" },
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   // plugins: [
   // ],
   /*
-  ** modules
-  */
-  modules: [
-    ["@nuxtjs/google-analytics", { ua: "UA-366915-1" }]
-  ],
+   ** modules
+   */
+  modules: [["@nuxtjs/google-analytics", { ua: "UA-366915-1" }]],
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** Run ESLint on save
-    */
+     ** Run ESLint on save
+     */
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -73,6 +71,9 @@ module.exports = {
     CTF_PERSON_ID: process.env.CTF_PERSON_ID || config.CTF_PERSON_ID,
     CTF_PROJECT_POST_TYPE_ID:
       process.env.CTF_PROJECT_POST_TYPE_ID || config.CTF_PROJECT_POST_TYPE_ID,
-    PRISMIC_URL: process.env.PRISMIC_URL || prismicConfig.PRISMIC_URL || 'http://localhost:3000'
+    PRISMIC_URL:
+      process.env.PRISMIC_URL ||
+      prismicConfig.PRISMIC_URL ||
+      "http://localhost:3000"
   }
 }

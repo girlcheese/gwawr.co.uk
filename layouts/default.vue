@@ -1,7 +1,7 @@
 <template>
   <div>
-    <gwawr-nav/>
-    <nuxt/>
+    <gwawr-nav />
+    <nuxt />
   </div>
 </template>
 

@@ -1,8 +1,15 @@
 <template>
   <article>
-    <gwawr-hero :message="project.fields.title" :bg-image="project.fields.bannerImage ? project.fields.bannerImage.fields.file.url : ''"/>
+    <gwawr-hero
+      :message="project.fields.title"
+      :bg-image="
+        project.fields.bannerImage
+          ? project.fields.bannerImage.fields.file.url
+          : ''
+      "
+    />
     <main class="section">
-      <div class="container content" v-html="parseDown(project.fields.body)"/>
+      <div class="container content" v-html="parseDown(project.fields.body)" />
     </main>
   </article>
 </template>
@@ -56,5 +63,4 @@ export default {
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

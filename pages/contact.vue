@@ -1,11 +1,9 @@
 <template>
   <article>
-    <gwawr-hero :message="message" :bg-image="bgImage"/>
+    <gwawr-hero :message="message" :bg-image="bgImage" />
     <main class="section">
       <div class="container content">
-        <p>
-          I'm on the socials. And happy to talk.
-        </p>
+        <p>I'm on the socials. And happy to talk.</p>
       </div>
     </main>
   </article>
