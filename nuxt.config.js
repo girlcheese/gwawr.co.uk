@@ -38,7 +38,21 @@ module.exports = {
   /*
    ** modules
    */
-  modules: [["@nuxtjs/google-analytics", { ua: "UA-366915-1" }]],
+  modules: [
+    ["@nuxtjs/google-analytics", { ua: "UA-366915-1" }],
+    [
+      "prismic-nuxt",
+      {
+        endpoint:
+          (process.env.PRISMIC_URL ||
+            prismicConfig.PRISMIC_URL ||
+            "http://localhost:3000") + "/api/v2",
+        linkResolver: function(doc, ctx) {
+          return "/"
+        }
+      }
+    ]
+  ],
   /*
    ** Build configuration
    */

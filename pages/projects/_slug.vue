@@ -1,25 +1,25 @@
 <template>
   <article>
     <gwawr-hero
-      :message="project.fields.title"
-      :bg-image="
-        project.fields.bannerImage
-          ? project.fields.bannerImage.fields.file.url
-          : ''
-      "
+      :message="$prismic.dom.RichText.asText(document.data.title)"
+      :bg-image="bgImage"
     />
     <main class="section">
-      <div class="container content" v-html="parseDown(project.fields.body)" />
+      <div
+        class="container content"
+        v-html="
+          $prismic.dom.RichText.asHtml(
+            document.data.description,
+            $prismic.linkResolver
+          )
+        "
+      ></div>
     </main>
   </article>
 </template>
 
 <script>
 import GwawrHero from "~/components/GwawrHero"
-import { createClient } from "~/plugins/contentful.js"
-import "markdown-it"
-
-const client = createClient()
 
 export default {
   components: {
@@ -32,32 +32,31 @@ export default {
   data() {
     return {
       project: null,
-      message: null
+      message: null,
+      bgImage: null
     }
   },
   head() {
     return {
-      title: `Sam Carrington - Projects - ${this.project.fields.title}`
+      title: `Sam Carrington - Projects - ${this.meta.title}`
     }
   },
-  asyncData({ env, params }) {
-    return Promise.all([
-      client.getEntries({
-        content_type: env.CTF_PROJECT_POST_TYPE_ID,
-        "fields.slug": params.slug
-      })
-    ])
-      .then(([projects]) => {
-        return {
-          project: projects.items[0]
-        }
-      })
-      .catch(console.error)
-  },
-  methods: {
-    parseDown(data) {
-      let md = require("markdown-it")()
-      return md.render(data)
+  async asyncData({ params, app, error }) {
+    console.log(params)
+    let document = await app.$prismic.api.getByUID("project", params.slug)
+
+    if (document) {
+      return {
+        document,
+        title: app.$prismic.dom.RichText.asText(document.data.title),
+        meta: {
+          title: app.$prismic.dom.RichText.asText(document.data.title),
+          description: ""
+        },
+        bgImage: ""
+      }
+    } else {
+      error({ statusCode: 404, message: "Page not found" })
     }
   }
 }

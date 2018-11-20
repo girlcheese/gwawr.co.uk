@@ -25,6 +25,7 @@
     "nuxt-sass-resources-loader": "^2.0.5",
     "postcss-extend": "^1.0.5",
     "postcss-hexrgba": "^1.0.1",
+    "prismic-nuxt": "^0.1.2",
     "sass-loader": "^7.1.0",
     "vue-loader": "^15.4.2",
     "vue-style-loader": "^4.1.2"

@@ -2,15 +2,18 @@
   <div>
     <gwawr-nav />
     <nuxt />
+    <gwawr-footer />
   </div>
 </template>
 
 <script>
 import GwawrNav from "~/components/GwawrNav.vue"
+import GwawrFooter from "~/components/GwawrFooter.vue"
 
 export default {
   components: {
-    GwawrNav
+    GwawrNav,
+    GwawrFooter
   }
 }
 </script>
