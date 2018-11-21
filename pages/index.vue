@@ -5,7 +5,7 @@
       :bg-image="bgImage"
       class="is-1by2"
     />
-    <main class="section">
+    <section class="section">
       <div
         class="container content"
         v-html="
@@ -15,7 +15,7 @@
           )
         "
       ></div>
-    </main>
+    </section>
   </article>
 </template>
 

@@ -2,37 +2,34 @@
   <article>
     <gwawr-hero :message="message" />
 
-    <main class="is-desktop is-gapless">
-      <gwawr-project-tile
-        v-for="(project, index) in projects"
-        :key="index"
-        :title="$prismic.dom.RichText.asText(project.data.title)"
-        :url="`/projects/${project.uid}`"
-        :image="`https://via.placeholder.com/250`"
-      />
+    <main>
+      <div class="columns">
+        <div v-for="n in 4" :key="n" class="column">
+          <gwawr-project-card
+            v-for="(project, index) in projects"
+            v-if="index % 4 === n - 1"
+            :idx="index"
+            :key="index"
+            :title="$prismic.dom.RichText.asText(project.data.title)"
+            :url="`/projects/${project.uid}`"
+            :image="`https://via.placeholder.com/250`"
+          />
+        </div>
+      </div>
     </main>
-    <ul>
-      <li v-for="(project, index) in projects" :key="index"></li>
-    </ul>
-    <!--
-      <div class="fl w-50">
-      <div class="fl w-100 w-25-ns">
-      <div class="fl w-100 w-50-m w-25-ns">
-      <div class="fl w-100 w-50-m w-25-l">
-    -->
   </article>
 </template>
 
 <script>
 import GwawrHero from "~/components/GwawrHero"
-import GwawrProjectTile from "~/components/GwawrProjectTile"
+import GwawrProjectCard from "~/components/GwawrProjectCard"
 // Have to install main object here in order to access query predicates method
 import Prismic from "prismic-javascript"
 
 export default {
   components: {
     GwawrHero,
-    GwawrProjectTile
+    GwawrProjectCard
   },
   data() {
     return {
@@ -51,40 +48,36 @@ export default {
       })
       .then(response => response.results)
 
+    let document = await app.$prismic.api.getByUID("page", "projects")
+
+    let ret = []
+
     if (projects) {
-      console.log(projects)
-      return {
-        projects: projects
-        // title: app.$prismic.dom.RichText.asText(document.data.title),
-        // meta: {
-        //   title: app.$prismic.dom.RichText.asText(document.data.meta_title),
-        //   description: app.$prismic.dom.RichText.asText(
-        //     document.data.meta_description
-        //   )
-        // },
-        // bgImage: app.$prismic.dom.Link.url(document.data.banner_image)
-      }
-    } else {
-      return []
+      ret.projects = projects
     }
-    // return Promise.all([
-    //   client.getEntries({
-    //     content_type: env.CTF_PROJECT_POST_TYPE_ID,
-    //     order: "-fields.date"
-    //   })
-    // ])
-    //   .then(([projects]) => {
-    //     return {
-    //       projects: projects.items
-    //     }
-    //   })
-    //   .catch(console.error)
+    if (document) {
+      ret.title =
+        app.$prismic.dom.RichText.asText(document.data.title) ||
+        "Gwawr - Sam Carrington - Projects"
+      ret.meta = {
+        title: "",
+        description: ""
+      }
+      ret.bgImage = ""
+      /*
+        title: app.$prismic.dom.RichText.asText(document.data.title),
+        meta: {
+          title: app.$prismic.dom.RichText.asText(document.data.meta_title),
+          description: app.$prismic.dom.RichText.asText(
+            document.data.meta_description
+          )
+        },
+        bgImage: app.$prismic.dom.Link.url(document.data.banner_image)
+         */
+    }
+    return ret
   }
 }
 </script>
 
-<style scoped>
-.test {
-  columns: 1;
-}
-</style>
+<style scoped />

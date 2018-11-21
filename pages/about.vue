@@ -1,7 +1,7 @@
 <template>
   <article>
     <gwawr-hero :message="message" :bg-image="bgImage" />
-    <main class="section">
+    <section class="section">
       <div class="container content">
         <p>
           I like using technology to solve problems. The most appealing features
@@ -17,7 +17,7 @@
           demonstrate skills in depth.
         </p>
       </div>
-    </main>
+    </section>
   </article>
 </template>
 
