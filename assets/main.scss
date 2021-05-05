@@ -4,9 +4,11 @@ $pink: #FA7C91;
 $brown: #757763;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
+$black-ter: #030303;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
+$grey-darker: $brown;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $purple;
@@ -20,21 +22,12 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-
-// Import only what you need from Bulma
-@import "../node_modules/bulma/sass/utilities/_all.sass";
-@import "../node_modules/bulma/sass/base/_all.sass";
-
 // Update component variables
 $navbar-background-color: rgba($grey-darker, 0.9);
 $navbar-item-color: $beige-lighter;
 $navbar-item-active-color: lighten($purple, 25%);
 $navbar-item-hover-background-color: $grey-darker;
 $navbar-item-hover-color: lighten($purple, 15%);
-
-@import "../node_modules/bulma/sass/components/navbar.sass";
-
-@import "../node_modules/bulma/sass/elements/_all.sass";
 
 // Custom styling
 @import "typography.scss";

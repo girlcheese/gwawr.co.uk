@@ -22,26 +22,26 @@
 </template>
 
 <script>
-import GwawrHero from "~/components/GwawrHero"
+import GwawrHero from '~/components/GwawrHero'
 
 export default {
   components: {
-    GwawrHero
+    GwawrHero,
   },
   asyncData() {
     return {
-      name: process.static ? "static" : process.server ? "server" : "client"
+      name: process.static ? 'static' : process.server ? 'server' : 'client',
+    }
+  },
+  data() {
+    return {
+      message: 'Blurb',
+      bgImage:
+        'https://instagram.flhr4-1.fna.fbcdn.net/vp/5f747d58ea73272b56444ab572d137f5/5C392F44/t51.2885-15/e35/30085046_333821953689686_3758648665254658048_n.jpg',
     }
   },
   head: {
-    title: "Gwawr - Sam Carrington - Hi!"
+    title: 'Gwawr - Sam Carrington - Hi!',
   },
-  data: function() {
-    return {
-      message: "Blurb",
-      bgImage:
-        "https://instagram.flhr4-1.fna.fbcdn.net/vp/5f747d58ea73272b56444ab572d137f5/5C392F44/t51.2885-15/e35/30085046_333821953689686_3758648665254658048_n.jpg"
-    }
-  }
 }
 </script>

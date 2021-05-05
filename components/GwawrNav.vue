@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <header class="">
     <nav
-      class="navbar is-transparent is-fixed-top"
+      class="w-full flex justify-between fixed top-0 flex justify-between"
       role="navigation"
       aria-label="main navigation"
     >
@@ -68,18 +68,18 @@
 <script>
 export default {
   methods: {
-    toggleMenu: function(event) {
+    toggleMenu(event) {
       const target = event.target.dataset.target
       const $target = document.getElementById(target)
-      event.target.classList.toggle("is-active")
-      $target.classList.toggle("is-active")
-    }
-  }
+      event.target.classList.toggle('is-active')
+      $target.classList.toggle('is-active')
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/main.scss";
+@import '~/assets/main.scss';
 h1 {
   width: 90px;
   height: 40px;

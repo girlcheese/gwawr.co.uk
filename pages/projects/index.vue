@@ -26,42 +26,44 @@
 </template>
 
 <script>
-import GwawrHero from "~/components/GwawrHero"
-import GwawrProjectTile from "~/components/GwawrProjectTile"
+import GwawrHero from '~/components/GwawrHero'
+import GwawrProjectTile from '~/components/GwawrProjectTile'
 
-import { createClient } from "~/plugins/contentful.js"
+import { createClient } from '~/plugins/contentful.js'
 
 const client = createClient()
 
 export default {
   components: {
     GwawrHero,
-    GwawrProjectTile
+    GwawrProjectTile,
+  },
+  asyncData({ env, $config: { ctf } }) {
+    return Promise.all([
+      client.getEntries({
+        content_type: env.CTF_PROJECT_POST_TYPE_ID,
+        order: '-fields.date',
+      }),
+    ])
+      .then(([projects]) => {
+        return {
+          projects: projects.items,
+        }
+      })
+      .catch((err) => {
+        console.error(err)
+      })
   },
   data() {
     return {
       message: "Things I've done",
-      projects: null
+      projects: null,
     }
   },
   head: {
     title:
-      "Sam Carrington - Projects; Budweiser, Sainsbury's, Nando's, Premier League and more"
+      "Sam Carrington - Projects; Budweiser, Sainsbury's, Nando's, Premier League and more",
   },
-  asyncData({ env }) {
-    return Promise.all([
-      client.getEntries({
-        content_type: env.CTF_PROJECT_POST_TYPE_ID,
-        order: "-fields.date"
-      })
-    ])
-      .then(([projects]) => {
-        return {
-          projects: projects.items
-        }
-      })
-      .catch(console.error)
-  }
 }
 </script>
 
