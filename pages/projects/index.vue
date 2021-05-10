@@ -1,19 +1,20 @@
 <template>
   <article>
     <gwawr-hero :message="message" />
-
-    <main class="is-desktop is-gapless">
-      <gwawr-project-tile
-        v-for="(project, index) in projects"
-        :key="index"
-        :title="project.fields.title"
-        :url="`/projects/${project.fields.slug}`"
-        :image="
-          project.fields.thumbImage
-            ? project.fields.thumbImage.fields.file.url
-            : ''
-        "
-      />
+    <main class="container mx-auto py-10">
+      <div class="flex flex-wrap -m-4">
+        <gwawr-project-tile
+          v-for="(project, index) in projects"
+          :key="index"
+          :title="project.fields.title"
+          :url="`/projects/${project.fields.slug}`"
+          :image="
+            project.fields.thumbImage
+              ? project.fields.thumbImage.fields.file.url
+              : ''
+          "
+        />
+      </div>
     </main>
 
     <!--

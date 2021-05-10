@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="w-full">
     <gwawr-hero
       :message="project.fields.title"
       :bg-image="
@@ -8,11 +8,8 @@
           : ''
       "
     />
-    <main class="section py-4">
-      <div
-        class="mx-auto max-w-4xl px-4"
-        v-html="parseDown(project.fields.body)"
-      />
+    <main class="section container mx-auto">
+      <div class="content p-10" v-html="parseDown(project.fields.body)" />
     </main>
   </article>
 </template>
@@ -66,4 +63,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style>
+main {
+  p {
+    @apply py-1;
+  }
+}
+</style>

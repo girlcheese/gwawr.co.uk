@@ -1,7 +1,7 @@
 <template>
   <header class="">
     <nav
-      class="w-full flex justify-between fixed top-0 flex justify-between"
+      class="w-full flex justify-between fixed top-0 flex justify-between bg-gray-400 bg-opacity-50 py-2"
       role="navigation"
       aria-label="main navigation"
     >
@@ -24,25 +24,25 @@
             to="/"
             exact
             active-class="nuxt-link-active is-active"
-            class="navbar-item"
+            class="navbar-item px-4"
             >Home</nuxt-link
           >
           <nuxt-link
             to="/about"
             active-class="nuxt-link-active is-active"
-            class="navbar-item"
+            class="navbar-item px-4"
             >About</nuxt-link
           >
           <nuxt-link
             to="/projects"
             active-class="nuxt-link-active is-active"
-            class="navbar-item"
+            class="navbar-item px-4"
             >Projects</nuxt-link
           >
           <nuxt-link
             to="/contact"
             active-class="nuxt-link-active is-active"
-            class="navbar-item"
+            class="navbar-item px-4"
             >Contact</nuxt-link
           >
         </div>

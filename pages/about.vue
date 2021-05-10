@@ -1,14 +1,14 @@
 <template>
-  <article>
+  <article class="w-full bg-white">
     <gwawr-hero :message="message" :bg-image="bgImage" />
-    <main class="section">
-      <div class="container content">
-        <p>
+    <main class="section container flex justify-center mx-auto p-10">
+      <div class="content">
+        <p class="pb-2">
           I like using technology to solve problems. The most appealing features
           of building on the web for me are the need for combined technical and
           creative skills.
         </p>
-        <p>
+        <p class="pb-2">
           I'm a JavaScript developer by trade, but have been a team leader and
           Technical Director for the past 10 years. However I still get my hands
           dirty with code occasionally. Some might say that's a dangerous thing.

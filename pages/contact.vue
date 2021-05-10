@@ -1,9 +1,9 @@
 <template>
   <article>
     <gwawr-hero :message="message" :bg-image="bgImage" />
-    <main class="section">
-      <div class="container content">
-        <p>I'm on the socials. And happy to talk.</p>
+    <main class="section container flex justify-center mx-auto p-10">
+      <div class="content">
+        <p class="pb-2">I'm on the socials. And happy to talk.</p>
       </div>
     </main>
   </article>

@@ -1,5 +1,10 @@
-import fs from 'fs'
 import { createClient } from '../plugins/contentful.js'
+
+/**
+ * Gather dynamic route data from the CMS for static generation
+ *
+ * @returns {Promise<{route: string, payload: T}[]>}
+ */
 const dynamicRoutes = async () => {
   const client = createClient()
   // fetch projects

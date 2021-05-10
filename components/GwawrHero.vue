@@ -2,9 +2,9 @@
   <section
     v-if="message !== ''"
     :style="`background-image:url(${bgImage})`"
-    class="w-full bg-no-repeat bg-center bg-cover h-4/5"
+    class="w-full bg-no-repeat bg-center bg-cover h-4/5 bg-green-500"
   >
-    <div class="hero-body mx-auto h-auto text-white py-24 px-10 object-fill">
+    <div class="container mx-auto h-auto text-white py-24 px-10 object-fill">
       <div class="container">
         <h1 class="title text-3xl font-extrabold tracking-wide">
           {{ message }}

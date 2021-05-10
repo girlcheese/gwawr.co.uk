@@ -1,14 +1,14 @@
 <template>
-  <article>
+  <article class="w-full bg-white">
     <gwawr-hero :message="message" :bg-image="bgImage" class="is-1by2" />
-    <main class="section">
-      <div class="container content">
-        <p class="">
+    <main class="section container flex justify-center mx-auto p-10">
+      <div class="content">
+        <p class="pb-2">
           I'm a passionate technologist with a wealth of experience in
           innovative brand communication, ecommerce and content management. I'm
           happiest when solving problems, and leading teams to solve them.
         </p>
-        <p class="">
+        <p class="pb-2">
           In the 20 years I've been building for the web I've seen technologies
           grow and die, habits mutate and adapt to that change, and seen ample
           evidence supporting
