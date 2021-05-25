@@ -1,7 +1,17 @@
 <template>
   <header class="">
     <nav
-      class="w-full flex justify-between fixed top-0 flex justify-between bg-gray-400 bg-opacity-50 py-2"
+      class="
+        w-full
+        flex
+        justify-between
+        fixed
+        top-0
+        flex
+        justify-between
+        bg-gray-400 bg-opacity-50
+        py-2
+      "
       role="navigation"
       aria-label="main navigation"
     >
@@ -23,25 +33,25 @@
           <nuxt-link
             to="/"
             exact
-            active-class="nuxt-link-active is-active"
+            active-class="is-active nuxt-link-active text-red-700"
             class="navbar-item px-4"
             >Home</nuxt-link
           >
           <nuxt-link
             to="/about"
-            active-class="nuxt-link-active is-active"
+            active-class="is-active nuxt-link-active text-red-700"
             class="navbar-item px-4"
             >About</nuxt-link
           >
           <nuxt-link
             to="/projects"
-            active-class="nuxt-link-active is-active"
+            active-class="is-active nuxt-link-active text-red-700"
             class="navbar-item px-4"
             >Projects</nuxt-link
           >
           <nuxt-link
             to="/contact"
-            active-class="nuxt-link-active is-active"
+            active-class="is-active nuxt-link-active text-red-700"
             class="navbar-item px-4"
             >Contact</nuxt-link
           >
@@ -79,7 +89,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/assets/main.scss';
 h1 {
   width: 90px;
   height: 40px;

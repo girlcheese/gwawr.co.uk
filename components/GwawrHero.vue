@@ -6,7 +6,7 @@
   >
     <div class="container mx-auto h-auto text-white py-24 px-10 object-fill">
       <div class="container">
-        <h1 class="title text-3xl font-extrabold tracking-wide">
+        <h1 class="title text-3xl font-bold tracking-wide px-2">
           {{ message }}
         </h1>
       </div>
@@ -35,10 +35,10 @@ export default {
 .hero {
   background-size: cover;
   background-position: 50% 50%;
-
-  h1 {
-    background-color: rgba($black-ter, 0.4);
-    display: inline;
-  }
+}
+h1 {
+  background-color: rgba($black-ter, 0.4);
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
 }
 </style>

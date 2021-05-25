@@ -1,7 +1,7 @@
 <template>
   <article class="w-full">
     <gwawr-hero
-      :message="project.fields.title"
+      :message="projectTitle"
       :bg-image="
         project.fields.bannerImage
           ? project.fields.bannerImage.fields.file.url
@@ -54,6 +54,15 @@ export default {
       title: `Sam Carrington - Projects - ${this.project.fields.title}`,
     }
   },
+  computed: {
+    projectTitle() {
+      const projectDate = this.project.fields?.date
+        ? new Date(this.project.fields.date)
+        : null
+      const projectYear = projectDate ? ` (${projectDate.getFullYear()})` : ''
+      return `${this.project.fields?.title}${projectYear}`
+    },
+  },
   methods: {
     parseDown(data) {
       const md = require('markdown-it')()
@@ -64,9 +73,7 @@ export default {
 </script>
 
 <style>
-main {
-  p {
-    @apply py-1;
-  }
+p {
+  @apply py-2;
 }
 </style>
