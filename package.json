@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
-    "axios": "^0.21.1",
+    "axios": "^1.6.4",
     "bulma": "^0.7.1",
-    "contentful": "^8.0.3",
+    "contentful": "^10.4.0",
     "css-loader": "^5.0.0",
     "markdown-it": "^10.0.0",
     "node-sass": "^4.9.3",
