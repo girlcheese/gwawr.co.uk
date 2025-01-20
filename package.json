@@ -17,7 +17,7 @@
     "@nuxtjs/google-analytics": "^2.0.2",
     "axios": "^0.21.1",
     "bulma": "^0.7.1",
-    "contentful": "^8.0.3",
+    "contentful": "^11.4.3",
     "css-loader": "^5.0.0",
     "markdown-it": "^10.0.0",
     "node-sass": "^4.9.3",
